@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dict>
-	<info>
-		<key>version</key>
-		<string>2.0</string>
-	</info>
-</dict>
+<info>
+	<version>
+		<text>2.0</text>
+	</version>
+	<url>
+		<text>https://raw.githubusercontent.com/arbullzhang/itmsServicesDemo/master/ItmsServicesDemo.plist</text>
+	</url>
+	<httpurl>
+		<text>https://raw.githubusercontent.com/arbullzhang/itmsServicesDemo/master/ItmsServicesDemo.plist</text>
+	</httpurl>
+</info>
