@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <info>
-	<version>
-		<text>2.0</text>
-	</version>
-	<url>
-		<text>https://raw.githubusercontent.com/arbullzhang/itmsServicesDemo/master/ItmsServicesDemo.plist</text>
-	</url>
-	<httpurl>
-		<text>https://raw.githubusercontent.com/arbullzhang/itmsServicesDemo/master/ItmsServicesDemo.plist</text>
-	</httpurl>
+	<version>2.0</version>
+	<url>https://raw.githubusercontent.com/arbullzhang/itmsServicesDemo/master/ItmsServicesDemo.plist</url>
+	<httpurl>https://raw.githubusercontent.com/arbullzhang/itmsServicesDemo/master/ItmsServicesDemo.plist</httpurl>
 </info>
