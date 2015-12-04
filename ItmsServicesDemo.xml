@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dict>
-	<key>info</key>
-	<dict>
+	<info>
 		<key>version</key>
 		<string>2.0</string>
-	</dict>
+	</info>
 </dict>
