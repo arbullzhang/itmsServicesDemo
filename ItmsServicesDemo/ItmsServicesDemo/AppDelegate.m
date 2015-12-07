@@ -11,7 +11,7 @@
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
-#define VERSION_ADDRESS @"http://pan.plyz.net/d.asp?u=1511293106&p=version_ios.xml"
+#define VERSION_ADDRESS @"https://raw.githubusercontent.com/arbullzhang/itmsServicesDemo/master/ItmsServicesDemo.xml"
 
 @interface AppDelegate ()
 {
@@ -78,8 +78,6 @@
             NSDictionary *localDic =[[NSBundle mainBundle] infoDictionary];
             
             NSString *currentVersionIDStr =[localDic objectForKey:@"CFBundleVersion"];
-            
-            NSLog(@"%@,%@,%f,%f",resultDic,newVersionIDStr,[newVersionIDStr floatValue],[currentVersionIDStr floatValue] );
             if(!currentVersionIDStr)
             {
                 [versionDefaults setObject:@"1.0" forKey:@"version"];
@@ -89,8 +87,6 @@
                 if([currentVersionIDStr compare:newVersionIDStr] == NSOrderedAscending)
                 {
                     [versionDefaults setObject:newVersionIDStr forKey:@"version"];
-                    //Download new version, and install new version.
-                    
                     dispatch_async(dispatch_get_main_queue(), ^{
                         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@""
                                                                          message:@"检测到最新版本，请更新！"
@@ -113,13 +109,12 @@
         case 0: // download and install new version
         {
             NSString* newVersionURLStr = [NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@", [(NSDictionary *)[resultDic objectForKey:@"url"] objectForKey:@"text"]];
-            if(!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.1")){
+            if(!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.1"))
+            {
                 newVersionURLStr = [NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@", [(NSDictionary *)[resultDic objectForKey:@"httpurl"] objectForKey:@"text"]];
             }
-            NSLog(@"%@",newVersionURLStr);
             NSURL *url = [NSURL URLWithString:newVersionURLStr];
             [[UIApplication sharedApplication] openURL:url];
-            
         }
             break;
         case 1:
